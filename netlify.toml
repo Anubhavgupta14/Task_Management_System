@@ -1,9 +1,0 @@
-[build]
-  command = "ng build"
-  publish = "dist/myApp" # Replace 'my-angular-app' with the correct path to your Angular app's build output.
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  
