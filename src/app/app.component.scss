@@ -12,3 +12,40 @@
     }
   }
 
+  .table-container {
+    overflow-x: auto; /* Enable horizontal scrolling for the table on small screens */
+  }
+
+  @media screen and (max-width: 768px) {
+    /* Styles for small screens (e.g., mobile devices) */
+    mat-form-field {
+      width: 100%;
+    }
+    .main-body{
+      max-width: 407px;
+    }
+
+    /* Adjust the font size, padding, etc. for better mobile view */
+    table {
+      font-size: 14px;
+    }
+
+    th.mat-header-cell,
+    td.mat-cell {
+      padding: 8px 16px;
+    }
+
+    td.mat-cell {
+      white-space: nowrap; /* Prevent cell content from wrapping */
+    }
+
+    /* Center align the text in header cells */
+    th.mat-header-cell {
+      text-align: center;
+    }
+
+    /* Center align the text in data cells */
+    td.mat-cell {
+      text-align: center;
+    }
+  }

@@ -13,8 +13,8 @@ export class TaskService {
     return this._http.post('https://task-management-backend-j679.onrender.com/save', data);
   }
 
-  updateTask(_id: any,data: any) : Observable<any>{
-    return this._http.put(`https://task-management-backend-j679.onrender.com/update`,{_id}, data);
+  updateTask(data: any) : Observable<any>{
+    return this._http.put(`https://task-management-backend-j679.onrender.com/update`, data);
   }
 
   getTaskList(): Observable<any>{

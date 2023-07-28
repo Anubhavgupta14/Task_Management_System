@@ -38,7 +38,7 @@ export class EmpAddEditComponent implements OnInit {
     if (this.empForm.valid) {
       if (this.data) {
         this._empService
-          .updateTask(this.data._id, this.empForm.value)
+          .updateTask(this.empForm.value)
           .subscribe({
             next: (val: any) => {
               this._coreService.openSnackBar('Task updated successfully','done')
