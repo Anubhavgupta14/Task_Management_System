@@ -8,6 +8,7 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CoreService } from './core/core.service';
+import { ngxCsv } from 'ngx-csv';
 
 @Component({
   selector: 'app-root',
@@ -52,6 +53,7 @@ export class AppComponent implements OnInit {
     this._empService.getTaskList().subscribe({
       next: (res) => {
         this.dataSource = new MatTableDataSource(res);
+        // console.log(res)
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
       },
@@ -92,5 +94,30 @@ export class AppComponent implements OnInit {
         }
       },
     });
+  }
+
+  exportCSV(){
+    var options={
+      title: 'User Details',
+      fieldSeparator: ',',
+      quoteStrings: '"',
+      decimalseparator: '.',
+      showLabels: false,
+      noDownload: false,
+      showTitle: false,
+      useBom: false,
+      headers:['_id','Task', 'Duedate','Description','Priority','Status']
+    };
+
+    this._empService.getTaskList().subscribe({
+      next:(res)=>{
+        new ngxCsv(res,"report",options)
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
+
+    console.log('csv')
   }
 }
