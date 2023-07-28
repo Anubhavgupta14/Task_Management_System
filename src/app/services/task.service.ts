@@ -10,18 +10,18 @@ export class TaskService {
   constructor(private _http: HttpClient) { }
 
   addTask(data: any) : Observable<any>{
-    return this._http.post('http://localhost:9000/save', data);
+    return this._http.post('https://task-management-backend-j679.onrender.com/save', data);
   }
 
   updateTask(_id: any,data: any) : Observable<any>{
-    return this._http.put(`http://localhost:9000/update`,{_id}, data);
+    return this._http.put(`https://task-management-backend-j679.onrender.com/update`,{_id}, data);
   }
 
   getTaskList(): Observable<any>{
-    return this._http.get('http://localhost:9000/')
+    return this._http.get('https://task-management-backend-j679.onrender.com/')
   }
 
   deleteTask(_id: any): Observable<any>{
-    return this._http.post(`http://localhost:9000/delete`,{_id})
+    return this._http.post(`https://task-management-backend-j679.onrender.com/delete`,{_id})
   }
 }
