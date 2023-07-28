@@ -6,12 +6,13 @@
     ADD TASK
   </button>
 </mat-toolbar>
-
-<div class="main-body">
-
+<body>
+  
+  <div class="main-body">
+    
   <mat-form-field>
     <mat-label>Filter</mat-label>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Task" #input>
   </mat-form-field>
 
   <div class="table-container">
@@ -78,6 +79,7 @@
       Download CSV
     </button>
 
-    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    <mat-paginator style="background-color: #f4f4f4;" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
   </div>
 </div>
+  </body>
