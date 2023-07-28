@@ -21,11 +21,12 @@ export class EmpAddEditComponent implements OnInit {
     private _coreService: CoreService
   ) {
     this.empForm = this._fb.group({
-      Task: '',
-      Duedate: '',
-      Description: '',
-      Priority: '',
-      Status: '',
+      _id:'',
+       Task: '',
+       Duedate: '',
+       Description: '',
+       Priority: '',
+       Status: '',
     });
   }
 
@@ -37,7 +38,7 @@ export class EmpAddEditComponent implements OnInit {
     if (this.empForm.valid) {
       if (this.data) {
         this._empService
-          .updateTask(this.data.id, this.empForm.value)
+          .updateTask(this.data._id, this.empForm.value)
           .subscribe({
             next: (val: any) => {
               this._coreService.openSnackBar('Task updated successfully','done')

@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
   title = 'Task Management';
 
   displayedColumns: string[] = [
-    'id',
+    '_id',
     'Task',
     'Duedate',
     'Description',
@@ -70,8 +70,8 @@ export class AppComponent implements OnInit {
     }
   }
 
-  deleteTask(id: number) {
-    this._empService.deleteTask(id).subscribe({
+  deleteTask(_id: any) {
+    this._empService.deleteTask(_id).subscribe({
       next: (res) => {
         this._coreService.openSnackBar('Task Deleted','done')
         this.getTaskList();
