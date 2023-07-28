@@ -1,6 +1,6 @@
 [build]
-  command = "npm run build"
-  publish = "dist/my-angular-app" # Replace 'my-angular-app' with the correct path to your Angular app's build output.
+  command = "ng build"
+  publish = "dist/myApp" # Replace 'my-angular-app' with the correct path to your Angular app's build output.
 
 [[redirects]]
   from = "/*"
